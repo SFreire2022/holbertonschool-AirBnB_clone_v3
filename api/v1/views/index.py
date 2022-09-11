@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """index"""
 import models
-from models import storage
 from api.v1.views import app_views
 from flask import jsonify
 from models.base_model import BaseModel

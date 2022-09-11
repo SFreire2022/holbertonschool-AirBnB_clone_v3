@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """index"""
 from api.v1.views import app_views
-from flask import jsonify, request
+from flask import jsonify
+from models.base_model import BaseModel
 
 
 @app_views.route('/status')

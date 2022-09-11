@@ -160,5 +160,6 @@ Sebastian Freire - [Github](https://github.com/SFreire2022) / <4437@holbertonsch
 Mauricio Percovich - [Github](https://github.com/MauriPercovich) / <4368@holbertonschool.com>
 
 third part of Airbnb: Sebastian Freire / Mauricio Percovich
+
 ## License
 Public Domain. No copy write protection.

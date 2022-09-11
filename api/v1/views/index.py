@@ -5,5 +5,15 @@ from flask import jsonify, request
 
 
 @app_views.route('/status')
-def status():
+def status_ok():
     return jsonify({"status": "OK"})
+
+
+@app_views.route('/stats')
+def ret_count():
+    dic = {'amenities': Amenity, 'cities': City,
+           'places': Place, 'reviews': Review,
+           'states': State, 'users': User}
+    for key in dic:
+        dic[key] = storage.count(dic[key])
+    return jsonify(dic)

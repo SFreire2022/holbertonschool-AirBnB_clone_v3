@@ -11,7 +11,7 @@ def status_ok():
     return jsonify({"status": "OK"})
 
 
-@app_views.route('/stats')
+@app_views.route('/stats', strict_slashes=False)
 def ret_count():
     dic = {'amenities': Amenity, 'cities': City,
            'places': Place, 'reviews': Review,

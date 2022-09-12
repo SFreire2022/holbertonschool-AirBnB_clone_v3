@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""States"""
+"""Cities API module"""
 import models
 from api.v1.views import app_views
 from flask import jsonify, abort, request, Response, make_response

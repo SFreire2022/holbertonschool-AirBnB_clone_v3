@@ -60,14 +60,14 @@ def create_city_place(city_id):
     if not request.json:
         abort(400, "Not a JSON")
     object_data = request.json
-	if 'user_id' not in object_data.keys():
+    if 'user_id' not in object_data.keys():
         abort(400, "Missing user_id")
     if 'name' not in object_data.keys():
         abort(400, "Missing name")
-	object_user = storage.get('User', object_data['user_id'])
-	if object_user is None:
+    object_user = storage.get('User', object_data['user_id'])
+    if object_user is None:
         abort(404)
-	object_data['city_id'] = city_id
+    object_data['city_id'] = city_id
     instance = Place(**object_data)
     storage.new(instance)
     storage.save()

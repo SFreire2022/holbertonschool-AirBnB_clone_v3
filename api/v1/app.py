@@ -12,6 +12,7 @@ app.register_blueprint(app_views)
 
 cors = CORS(app, resources={"/*": {"origins": "0.0.0.0"}})
 
+
 @app.teardown_appcontext
 def close(self):
     """close method"""

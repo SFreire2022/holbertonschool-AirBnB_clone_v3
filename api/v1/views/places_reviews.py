@@ -54,11 +54,11 @@ def delete_review(review_id):
 def create_place_review(place_id):
     """Create a Review object for given Place ID if method post and body
     contains json format and contains user_id and name key"""
+    if not request.json:
+        abort(400, "Not a JSON")
     object_place = storage.get('Place', place_id)
     if object_place is None:
         abort(404)
-    if not request.json:
-        abort(400, "Not a JSON")
     object_data = request.json
     if 'user_id' not in object_data.keys():
         abort(400, "Missing user_id")
@@ -67,8 +67,8 @@ def create_place_review(place_id):
     object_user = storage.get('User', object_data['user_id'])
     if object_user is None:
         abort(404)
-    object_data['place_id'] = place_id
     instance = Review(**object_data)
+    instance.place_id = object_place.id
     storage.new(instance)
     storage.save()
 

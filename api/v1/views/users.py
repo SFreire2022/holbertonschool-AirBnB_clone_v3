@@ -51,6 +51,8 @@ def create_user():
     object_data = request.json
     if 'name' not in object_data.keys():
         abort(400, "Missing name")
+    if 'email' not in object_data.keys():
+        abort(400, "Missing email")
     instance = User(**object_data)
     storage.new(instance)
     storage.save()

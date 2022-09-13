@@ -87,7 +87,9 @@ def update_review(review_id):
 
     data = request.json
     for key, value in data.items():
-        setattr(review, key, value)
+        if key != "id" and key != "created_at" and key != "updated_at"\
+            and key != "user_id" and key != "city_id":
+            setattr(review, key, value)
 
     storage.save()
 
